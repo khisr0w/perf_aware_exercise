@@ -1,3 +1,6 @@
 **/*.swp 
 **/binary/  
 **/*.data
+**/*.f64  
+**/*.json  
+**/tags
