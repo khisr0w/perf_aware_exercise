@@ -119,7 +119,6 @@ benchmark_haversine_gen_and_load(u64 number_pairs, u64 num_clusters, char *filen
     printf("  Iterate JSON: %llu (%.4f%%)\n", iterate_elapsed, 100.0*(f64)iterate_elapsed/(f64)total_elapsed);
 }
 
-
 internal void
 generate_and_check_difference(u64 num_pairs, u64 num_clusters, char *filename, u64 seed) {
     stat_f64 generation_stat = generate_haversine_json(num_pairs, num_clusters, filename);
@@ -128,7 +127,6 @@ generate_and_check_difference(u64 num_pairs, u64 num_clusters, char *filename, u
 
     test_json_f64_difference(filename);
 }
-
 
 i32 main(i32 argc, char* argv[]) {
     assert(argc == 5, "[seed] [number of pairs] [number of clusters] [file name]");

@@ -18,6 +18,8 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 endif()
 
 add_executable(${EXE_NAME} ${SOURCES})
+
+# TODO(abid): Make the flags platform independent.
 set_target_properties(${EXE_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
     COMPILE_FLAGS "/EHa /nologo /FC /Zo /WX /W4 /Gm- /wd5208 /wd4505 /wd4201 /DPLT_WIN /D_CRT_SECURE_NO_WARNINGS"
@@ -30,6 +32,7 @@ set_target_properties(${EXE_NAME} PROPERTIES
 message(STATUS "Build ${CMAKE_BUILD_TYPE}")
 message(STATUS "Bin Dir ${BIN_DIR}")
 
+# TODO(abid): Remove `cd ..` and find a platform independent way.
 add_custom_target(exec
     COMMAND cd .. && ${CMAKE_CURRENT_BINARY_DIR}/${BIN_DIR}/${EXE_NAME}
 )
